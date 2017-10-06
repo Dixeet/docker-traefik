@@ -6,7 +6,6 @@ services:
     command: --configFile=/etc/traefik/traefik.toml
     ports:
       - "80:80"
-      - "8080"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /home/robin/docker/traefik/mount/:/etc/traefik/
