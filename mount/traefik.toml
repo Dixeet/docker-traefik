@@ -3,7 +3,7 @@
 ################################################################
 #debug = true
 logLevel = "ERROR"
-
+defaultEntryPoints = ["http"]
 [entryPoints]
     [entryPoints.http]
     address = ":80"
