@@ -1,0 +1,14 @@
+[backends]
+  [backends.traefik]
+    [backends.traefik.circuitbreaker]
+    expression = "NetworkErrorRatio() > 0.5"
+    [backends.traefik.servers.traefikContainer]
+    url = "http://localhost:8080"
+    weight = 10
+
+[frontends]
+  [frontends.traefik-ui]
+  backend = "traefik"
+  entrypoints = ["http"] # overrides defaultEntryPoints
+    [frontends.traefik-ui.routes.host]
+    rule = "Host:traefik.dev"
