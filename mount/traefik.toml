@@ -19,6 +19,7 @@ address = ":8080"
 ################################################################
 [docker]
 domain = "dev"
+exposedbydefault = false
 
 [file]
 watch = true
