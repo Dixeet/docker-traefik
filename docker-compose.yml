@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  traefik:
+    image: traefik:alpine
+    command: --configFile=/etc/traefik/traefik.toml
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /home/robin/docker/traefik/mount/:/etc/traefik/
+    restart: always
+    container_name: traefik
+networks:
+  default:
+    external:
+      name: local
